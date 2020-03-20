@@ -13,6 +13,7 @@ if SERVER then
 end
 
 if CLIENT then
+	
 hook.Add("LoadFonts", "WLFONTS", function(font, genericFont)
 	surface.CreateFont("GmzArial",
 	{
@@ -23,6 +24,7 @@ hook.Add("LoadFonts", "WLFONTS", function(font, genericFont)
 		extended = true
 	})
 end)
+	
     netstream.Hook("openwlmenu",function(client)
         if LocalPlayer():IsAdmin() then
             frame = vgui.Create("DFrame")
