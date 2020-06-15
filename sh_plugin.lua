@@ -5,9 +5,9 @@ PLUGIN.author = "Dobytchick"
 if SERVER then
     nut.util.include("sv_plugin.lua")
 
-    local function AddDefaultSteamID64(sid64)
-        WhitelistedUsers[#WhitelistedUsers + 1] = sid64
-    end
+local function AddDefaultSteamID64(sid64)
+	WhitelistedUsers[sid64] = true
+end
     
     AddDefaultSteamID64("76561198251000796") -- insert you steamID
 end
