@@ -4,17 +4,17 @@ PLUGIN.author = "Dobytchick"
 
 if SERVER then
     nut.util.include("sv_plugin.lua")
-
-local function AddDefaultSteamID64(sid64)
-	WhitelistedUsers[sid64] = true
-end
+	
+    local function AddDefaultSteamID64(sid64)
+        WhitelistedUsers[sid64] = true
+    end
     
     AddDefaultSteamID64("76561198251000796") -- insert you steamID
 end
 
 if CLIENT then
 	
-hook.Add("LoadFonts", "WLFONTS", function(font, genericFont)
+    hook.Add("LoadFonts", "WLFONTS", function(font, genericFont)
 	surface.CreateFont("GmzArial",
 	{
 		font = "Arial",
@@ -23,7 +23,7 @@ hook.Add("LoadFonts", "WLFONTS", function(font, genericFont)
 		antialias = true,
 		extended = true
 	})
-end)
+    end)
 	
     netstream.Hook("openwlmenu",function(client)
         if LocalPlayer():IsAdmin() then
