@@ -27,7 +27,7 @@ netstream.Hook("removeWL",function(client,sid)
     if client:IsAdmin() then
         if string.match(sid, "[1-10]") && string.len(sid) == 17 then
             if WhitelistedUsers[sid] then
-				WhitelistedUsers[sid] = nil
+		WhitelistedUsers[sid] = nil
                 client:notify("steamid removed from wl")
                 local tojson = util.TableToJSON(WhitelistedUsers)
                 file.Write(wl_path_txt, tojson)
